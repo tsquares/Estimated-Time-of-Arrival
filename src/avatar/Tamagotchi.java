@@ -15,11 +15,17 @@ public abstract class Tamagotchi implements IGotchiface {
   
   public abstract void changeAppearance();
   
-  public void healthUp() {
-    // TODO
+  public void healthUp(int amount) {
+    
+    if (this.health == 100) {
+      // do nothing this is max health
+      return;
+    }
+    
+    this.health += amount;
   }
+  
   public void healthDown() {
-    // TODO
   }
   public void happinessUp() {
     // TODO
