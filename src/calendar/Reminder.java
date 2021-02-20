@@ -1,5 +1,5 @@
 package calendar;
 
-public class Reminder extends Thing implements Scheduler {
+public class Reminder extends Thing implements IScheduler {
 
 }

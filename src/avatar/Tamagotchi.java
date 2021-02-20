@@ -5,4 +5,5 @@ public class Tamagotchi {
   private int health;
   private int happiness;
   private int xp;
+  
 }
