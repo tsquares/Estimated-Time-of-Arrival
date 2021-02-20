@@ -5,6 +5,10 @@ import java.util.*;
 import java.time.*;
 
 public class Main {
+    // class variables
+    private int missedAssignmentPenalty = 10;
+    
+    //main
     public static void main(String[] args) {
         // create a tamagotchi
         Plant francis = new Plant();
@@ -12,9 +16,6 @@ public class Main {
         // calendar integrations needed
         // temporary stand-in calendar for demonstration purposes
         Agenda allTasks = new Agenda();
-
-
-        ArrayList<Thing> = new ArrayList<Thing>();
 
         // populate stand-in calendar
         // TODO
@@ -24,13 +25,11 @@ public class Main {
         LocalDate date = LocalDate.now(); // Today's date
         LocalDate date1 = date.minusDays(1);
         System.out.println(date1);
-
-
     }
 
     // regular usage of application
     public static void normalOperation(Agenda allTasks, Plant francis){
-        ArrayList<Thing> aList = allTasks.getTasks();
+        ArrayList<Thing> aList = allTasks.getThings();
         while (true) {
             LocalDate date = LocalDate.now(); // Today's date
             date = date.minusDays(1);

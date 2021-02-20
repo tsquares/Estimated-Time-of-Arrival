@@ -28,4 +28,8 @@ public class Agenda implements IScheduler {
   public void makeDone(Thing thing, int mm, int dd, int yyyy, String name) {
   
   }
+
+  public ArrayList<Thing> getThings() {
+    return loThings;
+  }
 }
