@@ -1,5 +1,5 @@
 package calendar;
 
-public class Appointment extends Thing implements IScheduler {
+public class Appointment extends Thing {
 
 }

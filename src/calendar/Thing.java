@@ -1,11 +1,8 @@
 package calendar;
 
-abstract class Thing implements IScheduler {
-  public void addItem(Thing thing, int mm, int dd, int yyyy) {
-    return;
-  }
-  
-  public void delItem(Thing thing) {
-    return;
-  }
+public abstract class Thing {
+  private int mm;
+  private int dd;
+  private int year;
+  private String name;
 }
