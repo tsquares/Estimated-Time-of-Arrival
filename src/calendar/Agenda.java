@@ -9,6 +9,24 @@ public class Agenda implements IScheduler {
     this.loThings = new ArrayList<>();
   }
   
+  private static Thing makeSpecificThing(Thing thing,
+      int mm, int dd, int yyyy,
+      String name) {
+    
+    if (thing instanceof Appointment) {
+      return new Appointment(mm, dd, yyyy, name);
+    }
+    
+    else if (thing instanceof Task) {
+      return new Task(mm, dd, yyyy, name);
+    }
+    
+    else if (thing instanceof Reminder) {
+      return new Reminder(mm, dd, yyyy, name);
+    }
+    
+  }
+  
   @Override
   public void addItem(Thing thing, int mm, int dd, int yyyy, String name) {
   
@@ -27,5 +45,10 @@ public class Agenda implements IScheduler {
   @Override
   public void makeDone(Thing thing, int mm, int dd, int yyyy, String name) {
   
+  }
+  
+  @Override
+  public void printAgenda() {
+    
   }
 }
