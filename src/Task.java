@@ -1,2 +1,4 @@
-public class Task {
+
+public class Task extends Thing implements Scheduler {
+
 }

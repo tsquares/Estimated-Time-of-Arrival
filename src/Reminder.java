@@ -1,2 +1,4 @@
-public class Reminder {
+
+public class Reminder extends Thing implements Scheduler {
+
 }

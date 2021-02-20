@@ -1,2 +1,4 @@
-public class Appointment {
+
+public class Appointment extends Thing implements Scheduler {
+
 }
