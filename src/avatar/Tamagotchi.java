@@ -6,7 +6,7 @@ public abstract class Tamagotchi implements IGotchiface {
   private int xp;
   private int currentLevel;
   
-  Tamagotchi() {
+  public Tamagotchi() {
     this.health = 100;
     this.happiness = 100;
     this.xp = 0;

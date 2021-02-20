@@ -11,7 +11,7 @@ public class HumanStyle {
   private Color eye;
   private Clothing clothing;
   
-  HumanStyle() {
+  public HumanStyle() {
     this.skin = Color.WHITE;
     this.hair = Color.WHITE;
     this.hairStyle = HairStyle.longHair;
@@ -19,7 +19,7 @@ public class HumanStyle {
     this.clothing = Clothing.teeAndJeans;
   }
   
-  HumanStyle(Color skin, Color hair,
+  public HumanStyle(Color skin, Color hair,
       HairStyle hairStyle, Color eye, Clothing clothing) {
     this.skin = skin;
     this.hair = hair;

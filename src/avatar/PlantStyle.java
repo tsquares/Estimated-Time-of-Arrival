@@ -11,7 +11,7 @@ public class PlantStyle {
   private Color pot;
   private int leafCount;
   
-  PlantStyle() {
+  public PlantStyle() {
     this.leaf = Color.GREEN;
     this.leafShape = LeafShape.spear;
     this.soilType = SoilType.dirt;
@@ -19,7 +19,7 @@ public class PlantStyle {
     this.leafCount = 4;
   }
   
-  PlantStyle(Color leaf, LeafShape leafShape, SoilType soilType,
+  public PlantStyle(Color leaf, LeafShape leafShape, SoilType soilType,
       Color pot, int leafCount) {
     this.leaf = leaf;
     this.leafShape = leafShape;

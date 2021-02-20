@@ -3,7 +3,7 @@ package avatar;
 public class Plant extends Tamagotchi {
   private PlantStyle style;
   
-  Plant() {
+  public Plant() {
     super();
     this.style = new PlantStyle();
   }
