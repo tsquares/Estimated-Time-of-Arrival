@@ -1,15 +1,18 @@
 package avatar;
 
 public abstract class Tamagotchi implements IGotchiface {
-  private Appearance looks;
   private int health;
   private int happiness;
   private int xp;
+  private int currentLevel;
   
-  
-  public void makeTamagotchi() {
-    // TODO
+  Tamagotchi() {
+    this.health = 100;
+    this.happiness = 100;
+    this.xp = 0;
+    this.currentLevel = 1;
   }
+  
   public void changeAppearance() {
     // TODO
   }
