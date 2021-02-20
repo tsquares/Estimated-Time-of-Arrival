@@ -15,26 +15,67 @@ public abstract class Tamagotchi implements IGotchiface {
   
   public abstract void changeAppearance();
   
+  @Override
   public void healthUp(int amount) {
+    int newHealth = this.health + amount;
     
-    if (this.health == 100) {
-      // do nothing this is max health
+    if (newHealth >= 100) {
+      // this is max health
+      this.health = 100;
       return;
     }
     
-    this.health += amount;
+    this.health = newHealth;
   }
   
-  public void healthDown() {
+  @Override
+  public void healthDown(int amount) {
+    int newHealth = this.health - amount;
+  
+    if (newHealth <= 0) {
+      // this is min health
+      this.health = 0;
+      return;
+    }
+  
+    this.health = newHealth;
   }
-  public void happinessUp() {
-    // TODO
+  
+  @Override
+  public void happinessUp(int amount) {
+    int newHappiness = this.happiness + amount;
+    
+    if (newHappiness >= 100) {
+      this.happiness = 100;
+      return;
+    }
+    
+    this.happiness = newHappiness;
   }
-  public void happinessDown() {
-    // TODO
+  
+  @Override
+  public void happinessDown(int amount) {
+    int newHappiness = this.happiness - amount;
+  
+    if (newHappiness <= 0) {
+      this.happiness = 0;
+      return;
+    }
+  
+    this.happiness = newHappiness;
   }
-  public void xpUp() {
-    // TODO
+  
+  @Override
+  public void xpUp(int amount) {
+    int levelGoal = (this.currentLevel + 1) * 10;
+    int newXP = this.xp + amount;
+    
+    if (newXP >= levelGoal) {
+      this.xp = newXP - levelGoal;
+      this.currentLevel += 1;
+    }
+    
+    this.xp = newXP;
   }
   
 }
