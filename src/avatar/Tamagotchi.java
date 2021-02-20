@@ -13,9 +13,8 @@ public abstract class Tamagotchi implements IGotchiface {
     this.currentLevel = 1;
   }
   
-  public void changeAppearance() {
-    // TODO
-  }
+  public abstract void changeAppearance();
+  
   public void healthUp() {
     // TODO
   }

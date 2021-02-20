@@ -7,5 +7,10 @@ public class Plant extends Tamagotchi {
     super();
     this.style = new PlantStyle();
   }
-
+  
+  @Override
+  public void changeAppearance() {
+  
+  }
+  
 }

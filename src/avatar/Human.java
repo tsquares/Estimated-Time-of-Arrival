@@ -7,5 +7,10 @@ public class Human extends Tamagotchi implements IGotchiface {
     super();
     this.style = new HumanStyle();
   }
-
+  
+  @Override
+  public void changeAppearance() {
+  
+  }
+  
 }
