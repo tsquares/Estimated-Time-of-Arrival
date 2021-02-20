@@ -1,3 +1,4 @@
+package calendar;
 
 public interface Scheduler {
   public void addItem(Thing thing, int mm, int dd, int yyyy);
