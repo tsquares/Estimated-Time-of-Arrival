@@ -5,14 +5,33 @@ public abstract class Tamagotchi implements IGotchiface {
   private int happiness;
   private int xp;
   private int currentLevel;
-  
+  private String name;
+
   public Tamagotchi() {
     this.health = 100;
     this.happiness = 100;
     this.xp = 0;
     this.currentLevel = 1;
+    this.name = "Francis";
   }
   
+  public Tamagotchi(String name) {
+    this.health = 100;
+    this.happiness = 100;
+    this.xp = 0;
+    this.currentLevel = 1;
+    this.name = name;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  @Override
+  public String toString() {
+    return name + ": \n" + "\tHealth: " + health + "\tHappiness: " + happiness + "\tXP: " + xp + "\tCurrent Level: " + currentLevel + "\n";
+  }
+
   public abstract void changeAppearance();
   
   @Override
