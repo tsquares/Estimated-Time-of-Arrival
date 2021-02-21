@@ -49,6 +49,10 @@ public class Agenda implements IScheduler {
   
   @Override
   public void printAgenda() {
+  }
     
+
+  public ArrayList<Thing> getThings() {
+    return loThings;
   }
 }
