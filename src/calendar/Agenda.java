@@ -74,7 +74,7 @@ public class Agenda implements IScheduler {
   }
   
   @Override
-  public String getAgenda() {
+  public String toString() {
     String agenda = "";
     
     for (Thing thing : this.loThings) {
