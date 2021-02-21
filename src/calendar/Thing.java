@@ -30,4 +30,17 @@ public abstract class Thing {
   }
   
   public abstract String getThing();
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == this) {
+      return true;
+    }
+    if (!(obj instanceof Thing)) {
+      return false;
+    }
+    Thing t = (Thing)obj;
+    // return t.equals(obj) && obj.equals(t);
+    return t.name.equalsIgnoreCase(this.name) && t.date.isEqual(this.date);
+  }
 }

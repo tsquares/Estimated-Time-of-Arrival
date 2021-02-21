@@ -57,10 +57,10 @@ public class Agenda implements IScheduler {
   }
   
   @Override
-  public void delItem(ThingType thing,
+  public boolean delItem(ThingType thing,
       int mm, int dd, int yyyy, String name) {
     Thing item = makeSpecificThing(thing, mm, dd, yyyy, name);
-    this.loThings.remove(item);
+    return this.loThings.remove(item);
   }
   
   @Override

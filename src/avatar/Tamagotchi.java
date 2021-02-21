@@ -92,9 +92,10 @@ public abstract class Tamagotchi implements IGotchiface {
     if (newXP >= levelGoal) {
       this.xp = newXP - levelGoal;
       this.currentLevel += 1;
+    } else {
+      this.xp = newXP;
     }
     
-    this.xp = newXP;
   }
   
 }

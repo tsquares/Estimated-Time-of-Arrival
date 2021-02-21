@@ -54,7 +54,7 @@ public class Main {
             boolean isStreak = false;
 
             while (!isDoneWithDay) {
-                System.out.print("---------------- Command: ");
+                System.out.print("---------------------- Command: ");
                 String in = userInput.nextLine();
                 if (in.indexOf("advance") != -1) {
                     isDoneWithDay = true;
@@ -78,9 +78,10 @@ public class Main {
                 } else if (in.indexOf("today") != -1 ) {
                     displayStats(allTasks, overdues, francis, userInput);
                 } else if (in.indexOf("complete") == 0) {
-                    markAsDone(in, allTasks);
+                    francis.healthUp(markAsDone(in, allTasks, overdues));
+                    francis.xpUp(10); // Basic XP implementation
                 } else if (in.indexOf("add") == 0) {
-                    addItem(in, allTasks);
+                    addItem(in, allTasks, overdues);
                 } else if (in.indexOf("help") == 0) {
                     helpList();
                 }
@@ -130,7 +131,7 @@ public class Main {
         }
     }
 
-    private static void addItem(String userInput, Agenda allThings) {
+    private static void addItem(String userInput, Agenda allThings, Agenda overdues) {
         // add type YYYY MM DD name
         Scanner lineScan = new Scanner(userInput);
         lineScan.next();
@@ -164,12 +165,19 @@ public class Main {
             default: // else Task
             t = ThingType.task;
         }
-
-        allThings.addItem(t, date[1], date[2], date[0], name);
+        LocalDate tempLD = LocalDate.of(date[0], date[1], date[2]);
+        if (tempLD.isBefore(LocalDate.now())) {
+            overdues.addItem(t, date[1], date[2], date[0], name);
+            System.out.println("Successfully added task to overdues");
+        } else {
+            allThings.addItem(t, date[1], date[2], date[0], name);
+            System.out.println("Successfully added task to list");
+        }
     }
 
-    private static void markAsDone(String userInput, Agenda allThings) {
+    private static int markAsDone(String userInput, Agenda allThings, Agenda overdues) {
         // complete type YYYY MM DD name
+        int ans = 0;
         Scanner lineScan = new Scanner(userInput);
         lineScan.next();
         String thingT = "";
@@ -180,6 +188,9 @@ public class Main {
             String temp = lineScan.next();
             if (temp.equalsIgnoreCase("appointment") || temp.equalsIgnoreCase("task") || temp.equalsIgnoreCase("reminder")) {
                 thingT = temp.toLowerCase();
+                if (!thingT.equals("reminder")) {
+                    ans = healthRegen;
+                }
             } else {
                 throw new Error("Error: Incorrect command (add): incorrect ThingType parameter");
             }
@@ -201,13 +212,21 @@ public class Main {
             default: // else Task
             t = ThingType.task;
         }
-        allThings.makeDone(t, date[1], date[2], date[0], name);
+        if (!allThings.delItem(t, date[1], date[2], date[0], name)) {
+            overdues.delItem(t, date[1], date[2], date[0], name);
+            ans -= 2;
+        }
+        System.out.println("Health increased by " + ans + "; Gained 10XP"); // XP values hard coded in :(
+        return ans;
     }
 
     private static void helpList() {
-        System.out.println("Add Thing format: add [Appointment/Task/Reminder] YYYY MM DD [name]");
-        System.out.println("Complete Thing format: complete [Appointment/Task/Reminder] YYYY MM DD [name]");
-        // TODO
+        System.out.println("Add Thing format:\n\t add [Appointment/Task/Reminder] YYYY MM DD [name]");
+        System.out.println("Complete Thing format:\n\t complete [Appointment/Task/Reminder] YYYY MM DD [name]");
+        System.out.println("View Today's Items and Stats:\n\t today");
+        System.out.println("Pet plant:\n\t pet");
+        System.out.println("Water plant:\n\t water"); 
+        System.out.println(); // Human care not supported. yet. :)
     }
 
     // Display Tamagotchi Stats

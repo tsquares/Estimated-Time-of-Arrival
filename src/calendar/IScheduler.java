@@ -17,7 +17,7 @@ public interface IScheduler {
       String nameO, String nameN
   );
   
-  public void delItem(
+  public boolean delItem(
       ThingType thing,
       int mm, int dd, int yyyy,
       String name
