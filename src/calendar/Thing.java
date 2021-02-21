@@ -4,8 +4,8 @@ import java.time.*;
 
 public abstract class Thing {
   private LocalDate date;
-  private final String name;
-  private final boolean isDone;
+  private String name;
+  private boolean isDone;
   
   public Thing(int mm, int dd, int yyyy, String name) {
     this.date = LocalDate.of(yyyy, mm, dd);
@@ -25,7 +25,9 @@ public abstract class Thing {
     return this.isDone;
   }
   
-  public void printThing() {
-    // TODO -- print contents of this Thing
+  public void markDone() {
+    this.isDone = true;
   }
+  
+  public abstract String getThing();
 }
