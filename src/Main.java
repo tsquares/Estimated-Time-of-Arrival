@@ -157,13 +157,17 @@ public class Main {
             name = lineScan.nextLine().substring(1);
         }
         ThingType t;
+        System.out.println(thingT);
         switch (thingT) {
             case "appointment": 
             t = ThingType.appointment;
+            break;
             case "reminder":
             t = ThingType.reminder;
+            break;
             default: // else Task
             t = ThingType.task;
+            break;
         }
         LocalDate tempLD = LocalDate.of(date[0], date[1], date[2]);
         if (tempLD.isBefore(LocalDate.now())) {
