@@ -26,7 +26,7 @@ public class Main {
         ThingType r = ThingType.reminder;
         allTasks.addItem(r, 2, 22, 2021, "Sample Reminder");
 
-        //normalOperation(allTasks, francis, userInput);
+        normalOperation(allTasks, francis, userInput);
     }
 
     // regular usage of application
@@ -59,6 +59,8 @@ public class Main {
                     } else { 
                         System.out.println(francis.getName() + " has already been pet today!");
                     }
+                } else if (in.indexOf("today") != -1 ) {
+                    valid = true;
                 }
             }
 
