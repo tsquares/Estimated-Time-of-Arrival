@@ -3,8 +3,8 @@ package calendar;
 import java.time.*;
 
 public abstract class Thing {
-  private final String name;
   private LocalDate date;
+  private final String name;
   private final boolean isDone;
   
   public Thing(int mm, int dd, int yyyy, String name) {
@@ -16,7 +16,6 @@ public abstract class Thing {
   public LocalDate getDate() {
     return this.date;
   }
-
   
   public String getName() {
     return this.name;
