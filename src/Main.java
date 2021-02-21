@@ -6,7 +6,7 @@ import java.time.*;
 
 public class Main {
     // class variables
-    private static int missedAssignmentPenalty = 10;
+    private static int healthIncrement = 10;
     
     //main
     public static void main(String[] args) {
@@ -19,28 +19,32 @@ public class Main {
 
         // populate stand-in calendar
         // TODO
-
-        // create list of all assignments
-        // TODO
-        LocalDate date = LocalDate.now(); // Today's date
-        LocalDate date1 = date.minusDays(1);
-        System.out.println(date1);
     }
 
     // regular usage of application
     public static void normalOperation(Agenda allTasks, Plant francis){
         ArrayList<Thing> aList = allTasks.getThings();
+        LocalDate lastDay = LocalDate.now();
         while (true) {
-            LocalDate date = LocalDate.now(); // Today's date
-            date = date.minusDays(1);
+            LocalDate today = LocalDate.now(); // Today's date
+            LocalDate yesterday = today.minusDays(1);
+            // add/subtract tamagotchi health
             for (int i = 0; i < aList.size(); i++) { // search through all list items
                 // check for overdue/incomplete assignments
-                if (date.equals(aList.get(i).getDate())) { // check if date objects are equaivalent
-                    francis.healthDown(missedAssignmentPenalty); // lower Tamagotchi's health
+                if (yesterday.equals(aList.get(i).getDate())) { // check if date objects are equaivalent
+                    francis.healthDown(healthIncrement); // lower Tamagotchi's health
                     aList.remove(i);
                 }
                 // check for assignments completed early
-                if (aList.get(i).)
+                if (aList.get(i).getIsDone()) {
+                    francis.healthUp(healthIncrement);
+                    aList.remove(i);
+                }
+            }
+            // add/subtract tamagotchi happiness
+            if (lastDay.equals(today)) {
+                francis.happinessDown(20);
+                lastDay = today;
             }
         }
     }
