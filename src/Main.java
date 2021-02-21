@@ -6,7 +6,7 @@ import java.time.*;
 
 public class Main {
     // class variables
-    private int missedAssignmentPenalty = 10;
+    private static int missedAssignmentPenalty = 10;
     
     //main
     public static void main(String[] args) {
@@ -34,9 +34,13 @@ public class Main {
             LocalDate date = LocalDate.now(); // Today's date
             date = date.minusDays(1);
             for (int i = 0; i < aList.size(); i++) { // search through all list items
+                // check for overdue/incomplete assignments
                 if (date.equals(aList.get(i).getDate())) { // check if date objects are equaivalent
                     francis.healthDown(missedAssignmentPenalty); // lower Tamagotchi's health
+                    aList.remove(i);
                 }
+                // check for assignments completed early
+                if (aList.get(i).)
             }
         }
     }
