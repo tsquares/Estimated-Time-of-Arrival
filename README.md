@@ -2,8 +2,8 @@
 
 BALANCE YOUR WORK/SCHOOL TIME WITH YOUR PERSONAL TIME!
 
-- Make a Tamagotchi you
-- Canvas(?)/Calendar integration (to know when you complete your taks
+- Make a 'Tamagotchi' avatar to care for
+- Canvas(?)/Calendar integration (to know when you complete your tasks)
  
 - health --> don't do your taks, health goes down
 - XP --> unbroken streak of completing tasks, gain xp at the end of each day
