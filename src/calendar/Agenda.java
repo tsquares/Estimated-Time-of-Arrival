@@ -63,7 +63,7 @@ public class Agenda implements IScheduler {
     return this.loThings.remove(item);
   }
   
-  @Override
+  /*@Override
   public void makeDone(ThingType thing,
       int mm, int dd, int yyyy, String name) {
     Thing item = makeSpecificThing(thing, mm, dd, yyyy, name);
@@ -72,7 +72,7 @@ public class Agenda implements IScheduler {
     Thing completedItem = item;
     completedItem.markDone();
     this.loThings.add(completedItem);
-  }
+  }*/
   
   @Override
   public String toString() {

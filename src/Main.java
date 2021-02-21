@@ -110,12 +110,12 @@ public class Main {
                     }
                 }
                 // check for assignments completed early
-                if (!aList.isEmpty()) {
+                /*if (!aList.isEmpty()) {
                     if (aList.get(i).getIsDone()) {
                         francis.healthUp(healthRegen);
                         aList.remove(i);
                     }
-                }
+                }*/
             }
 
             // add/subtract tamagotchi happiness at end of day
@@ -236,35 +236,5 @@ public class Main {
         System.out.println();
         System.out.println("Upcoming Tasks: \n" + allTasks);
         System.out.println("\n");
-    }
-
-
-    private static void debug() {
-        String thingT = "";
-        int[] date = new int[3];
-        int ind = 0;
-        String name = "";
-        Scanner lineScan = new Scanner("add task 2021 03 05 Buy Milk");
-        lineScan.next();
-        while (lineScan.hasNext()) {
-            String temp = lineScan.next();
-            System.out.print(temp);
-            if (temp.equalsIgnoreCase("appointment") || temp.equalsIgnoreCase("task") || temp.equalsIgnoreCase("reminder")) {
-                thingT = temp.toLowerCase();
-            } else {
-                throw new Error("Error: Incorrect command (add): incorrect ThingType parameter");
-            }
-            while (lineScan.hasNextInt() && ind < 3) {
-                date[ind] = lineScan.nextInt();
-                ind++;
-            }
-            if (date.length < 3) {
-                throw new Error("Error: Incorrect command (add): incorrect date parameters");
-            }
-            name = lineScan.nextLine();
-        }
-        for (int i = 0; i < date.length; i++) {
-            System.out.println(date[i]);
-        }
     }
 }

@@ -23,11 +23,11 @@ public interface IScheduler {
       String name
   );
   
-  public void makeDone(
+/*  public void makeDone(
       ThingType thing,
       int mm, int dd, int yyyy,
       String name
-  );
+  );*/
   
   public String toString();
 }
