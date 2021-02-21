@@ -11,7 +11,7 @@ public class Appointment extends Thing {
     String appt = "";
     
     appt = this.getDate().toString()
-        + String.format(", Appointment: %s", this.getDate());
+        + String.format(", Appointment: %s", this.getName());
     
     return appt;
   }

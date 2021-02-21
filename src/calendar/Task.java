@@ -11,7 +11,7 @@ public class Task extends Thing {
     String task = "";
   
     task = this.getDate().toString()
-        + String.format(", Task: %s", this.getDate());
+        + String.format(", Task: %s", this.getName());
   
     return task;
   }

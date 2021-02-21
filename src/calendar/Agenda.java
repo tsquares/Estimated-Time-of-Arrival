@@ -78,6 +78,8 @@ public class Agenda implements IScheduler {
   public String toString() {
     String agenda = "";
     
+    if (this.loThings.isEmpty()) return "Nothing! :D";
+
     for (Thing thing : this.loThings) {
       String currentThing = thing.getThing();
       agenda = agenda + currentThing + "\n";

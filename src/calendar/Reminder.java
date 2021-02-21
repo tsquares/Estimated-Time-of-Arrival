@@ -11,7 +11,7 @@ public class Reminder extends Thing {
     String rem = "";
   
     rem = this.getDate().toString()
-        + String.format(", Reminder: %s", this.getDate());
+        + String.format(", Reminder: %s", this.getName());
   
     return rem;
   }
