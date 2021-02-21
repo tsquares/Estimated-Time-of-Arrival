@@ -1,6 +1,7 @@
 package calendar;
 
 import java.util.ArrayList;
+import calendar.utils.*;
 
 public class Agenda implements IScheduler {
   ArrayList<Thing> loThings;
@@ -9,15 +10,15 @@ public class Agenda implements IScheduler {
     this.loThings = new ArrayList<>();
   }
   
-  private static Thing makeSpecificThing(Thing thing,
+  private static Thing makeSpecificThing(ThingType thing,
       int mm, int dd, int yyyy,
       String name) {
     
-    if (thing instanceof Appointment) {
+    if (thing.toChar() == 'a') {
       return new Appointment(mm, dd, yyyy, name);
     }
     
-    else if (thing instanceof Task) {
+    else if (thing.toChar() == 't') {
       return new Task(mm, dd, yyyy, name);
     }
     
@@ -27,14 +28,14 @@ public class Agenda implements IScheduler {
   }
   
   @Override
-  public void addItem(Thing thing,
+  public void addItem(ThingType thing,
       int mm, int dd, int yyyy, String name) {
     Thing item = makeSpecificThing(thing, mm, dd, yyyy, name);
     this.loThings.add(item);
   }
   
   @Override
-  public void changeItem(Thing thingO, Thing thingN,
+  public void changeItem(ThingType thingO, ThingType thingN,
       int mmO, int mmN,
       int ddO, int ddN,
       int yyyyO, int yyyyN,
@@ -56,14 +57,14 @@ public class Agenda implements IScheduler {
   }
   
   @Override
-  public void delItem(Thing thing,
+  public void delItem(ThingType thing,
       int mm, int dd, int yyyy, String name) {
     Thing item = makeSpecificThing(thing, mm, dd, yyyy, name);
     this.loThings.remove(item);
   }
   
   @Override
-  public void makeDone(Thing thing,
+  public void makeDone(ThingType thing,
       int mm, int dd, int yyyy, String name) {
     Thing item = makeSpecificThing(thing, mm, dd, yyyy, name);
     this.loThings.remove(item);

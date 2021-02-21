@@ -1,5 +1,6 @@
 import avatar.*;
 import calendar.*;
+import calendar.utils.*;
 
 import java.util.*;
 import java.time.*;
@@ -22,7 +23,8 @@ public class Main {
         Agenda allTasks = new Agenda();
 
         // populate stand-in calendar
-        // TODO
+        ThingType r = ThingType.reminder;
+        allTasks.addItem(r, 2, 22, 2021, "Sample Reminder");
 
         //normalOperation(allTasks, francis, userInput);
     }

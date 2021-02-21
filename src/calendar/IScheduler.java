@@ -1,14 +1,16 @@
 package calendar;
 
+import calendar.utils.*;
+
 public interface IScheduler {
   public void addItem(
-      Thing thing,
+      ThingType thing,
       int mm, int dd, int yyyy,
       String name
   );
   
   public void changeItem(
-      Thing thingO, Thing thingN,
+      ThingType thingO, ThingType thingN,
       int mmO, int mmN,
       int ddO, int ddN,
       int yyyyO, int yyyyN,
@@ -16,16 +18,16 @@ public interface IScheduler {
   );
   
   public void delItem(
-      Thing thing,
+      ThingType thing,
       int mm, int dd, int yyyy,
       String name
   );
   
   public void makeDone(
-      Thing thing,
+      ThingType thing,
       int mm, int dd, int yyyy,
       String name
   );
   
-  public String getAgenda();
+  public String toString();
 }
