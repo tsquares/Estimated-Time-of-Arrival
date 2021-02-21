@@ -6,7 +6,7 @@ import java.time.*;
 
 public class Main {
     // class variables
-    private int missedAssignmentPenalty = 10;
+    private static int missedAssignmentPenalty = 10;
     
     //main
     public static void main(String[] args) {
