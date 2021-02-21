@@ -7,4 +7,4 @@ BALANCE YOUR WORK/SCHOOL TIME WITH YOUR PERSONAL TIME!
  
 - health --> don't do your taks, health goes down
 - XP --> unbroken streak of completing tasks, gain xp at the end of each day
-- happiness --> game-like feature, play minigames to keep your avatar happy
+- happiness --> game-like feature, play minigames(?) to keep your avatar happy
